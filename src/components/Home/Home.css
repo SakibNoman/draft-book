@@ -1,0 +1,14 @@
+.input-box {
+  background-color: transparent;
+  border: 2px solid rgb(78, 77, 77);
+  color: white;
+}
+.input-box:focus {
+  background-color: transparent;
+  border: 2px solid rgb(78, 77, 77);
+  color: white;
+}
+.input-area {
+  display: flex;
+  justify-content: center;
+}
