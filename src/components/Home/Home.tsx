@@ -14,7 +14,23 @@ const Home = () => {
     description: "",
   });
 
-  const [draftList, setDraftList] = useState<IDraft[]>([]);
+  const [draftList, setDraftList] = useState<IDraft[]>([
+    {
+      title: "Topic that I will learn",
+      description:
+        "Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python",
+    },
+    {
+      title: "Topic that I will learn",
+      description:
+        "Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python,Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS, Redux, Python",
+    },
+    {
+      title: "Topic that I will learn",
+      description:
+        "Typescript, Tailwind CSS, Redux, Python, Typescript, Tailwind CSS",
+    },
+  ]);
 
   const onClick = () => {
     setDraftList([...draftList, draft]);
@@ -25,7 +41,9 @@ const Home = () => {
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDraft({ ...draft, [e.target.name]: e.target.value });
+    if (e.target.value !== "") {
+      setDraft({ ...draft, [e.target.name]: e.target.value });
+    }
   };
 
   return (
