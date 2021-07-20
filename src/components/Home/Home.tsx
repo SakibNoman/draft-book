@@ -48,7 +48,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="mt-5 input-area">
+      <div className="mt-5 input-area ">
         <Form>
           <Form.Group className="mb-3" controlId="title">
             <Form.Control
@@ -74,14 +74,18 @@ const Home = () => {
           </Button>
         </Form>
       </div>
-      <Row className="justify-content-center">
-        {draftList.map((each) => (
-          <DraftCard
-            title={each.title}
-            description={each.description}
-            key={each.title}
-          ></DraftCard>
-        ))}
+      <Row className="justify-content-center body-area">
+        {draftList.map((each) =>
+          each.title.length > 0 ? (
+            <DraftCard
+              title={each.title}
+              description={each.description}
+              key={each.title}
+            ></DraftCard>
+          ) : (
+            ""
+          )
+        )}
       </Row>
     </>
   );
