@@ -9,13 +9,13 @@
   color: white;
 }
 .input-area {
-  display: flex;
   justify-content: center;
   position: fixed;
-  top: -5%;
-  right: 45%;
+  /* top: -5%;
+  right: 45%; */
   z-index: 111;
 }
 .body-area {
-  margin-top: 20%;
+  flex-wrap: wrap;
+  margin-left: 30%;
 }

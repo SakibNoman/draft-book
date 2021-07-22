@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, Row } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import DraftCard from "../DraftCard/DraftCard";
 import "./Home.css";
 
@@ -33,7 +33,7 @@ const Home = () => {
   ]);
 
   const onClick = () => {
-    setDraftList([...draftList, draft]);
+    setDraftList([draft, ...draftList]);
     setDraft({
       title: "",
       description: "",
@@ -47,8 +47,8 @@ const Home = () => {
   };
 
   return (
-    <>
-      <div className="mt-5 input-area ">
+    <div className="row">
+      <div className="mt-5 col-md-3 input-area">
         <Form>
           <Form.Group className="mb-3" controlId="title">
             <Form.Control
@@ -74,7 +74,7 @@ const Home = () => {
           </Button>
         </Form>
       </div>
-      <Row className="justify-content-center body-area">
+      <div className="justify-content-center d-flex body-area col-md-9">
         {draftList.map((each) =>
           each.title.length > 0 ? (
             <DraftCard
@@ -86,8 +86,8 @@ const Home = () => {
             ""
           )
         )}
-      </Row>
-    </>
+      </div>
+    </div>
   );
 };
 
