@@ -7,3 +7,19 @@
   object-fit: cover;
   height: min-content;
 }
+
+.custom-card:hover {
+  border: 4px solid rgb(35, 169, 202);
+  box-shadow: 2px 2px 40px black;
+}
+.custom-card:hover .pinIcon > svg > path {
+  display: block;
+}
+.pinIcon > svg > path {
+  display: none;
+  stroke: white;
+  stroke-width: 3;
+}
+.pinIcon {
+  cursor: pointer;
+}

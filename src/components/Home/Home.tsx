@@ -4,15 +4,23 @@ import DraftCard from "../DraftCard/DraftCard";
 import "./Home.css";
 
 interface IDraft {
+  id: string;
   title: string;
   description: string;
 }
 
 const Home = () => {
   const [draft, setDraft] = useState<IDraft>({
+    id: "",
     title: "",
     description: "",
   });
+
+  const idGen = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  };
 
   const [pinned, setPinned] = useState<IDraft[]>([]);
 
@@ -21,14 +29,16 @@ const Home = () => {
   const onClick = () => {
     setDraftList([draft, ...draftList]);
     setDraft({
+      id: "",
       title: "",
       description: "",
     });
+    console.log(draftList);
   };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value !== "") {
-      setDraft({ ...draft, [e.target.name]: e.target.value });
+      setDraft({ ...draft, id: idGen(), [e.target.name]: e.target.value });
     }
   };
 
@@ -71,7 +81,8 @@ const Home = () => {
                 <DraftCard
                   title={each.title}
                   description={each.description}
-                  key={each.title}
+                  key={each.id}
+                  id={each.id}
                   dateTime={new Date().toLocaleString()}
                 ></DraftCard>
               ) : (
@@ -86,7 +97,8 @@ const Home = () => {
               <DraftCard
                 title={each.title}
                 description={each.description}
-                key={each.title}
+                key={each.id}
+                id={each.id}
                 dateTime={new Date().toLocaleString()}
               ></DraftCard>
             ) : (
