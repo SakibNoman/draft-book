@@ -22,7 +22,7 @@ const Home = () => {
       .substring(1);
   };
 
-  const [pinned, setPinned] = useState<IDraft[]>([]);
+  // const [pinned, setPinned] = useState<IDraft[]>([]);
 
   const [draftList, setDraftList] = useState<IDraft[]>([]);
 
@@ -71,7 +71,7 @@ const Home = () => {
         </Form>
       </div>
       <div className="justify-content-center d-flex flex-column body-area col-md-9">
-        {pinned.length === 0 ? (
+        {/* {pinned.length === 0 ? (
           ""
         ) : (
           <div className="justify-content-center d-flex flex-wrap border-bottom border-3 border-secondary">
@@ -90,7 +90,7 @@ const Home = () => {
               )
             )}
           </div>
-        )}
+        )} */}
         <div className="justify-content-center d-flex flex-wrap">
           {draftList.map((each) =>
             each.title.length > 0 ? (

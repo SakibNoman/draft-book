@@ -19,7 +19,7 @@ const DraftCard = ({ title, description, dateTime, id }: IProps) => {
           <div>
             <Card.Title>{title}</Card.Title>
           </div>
-          <div className="pinIcon">
+          <div title="Pin" className="pinIcon">
             <GrPin />
           </div>
         </div>
