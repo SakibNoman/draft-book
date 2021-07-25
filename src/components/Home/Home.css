@@ -16,6 +16,6 @@
   z-index: 111;
 }
 .body-area {
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin-left: 30%;
 }
